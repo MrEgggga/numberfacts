@@ -11,7 +11,7 @@
 script = ExtResource( 3 )
 modes = [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ) ]
 mode_inputs = [ "classic", "endless", "snake" ]
-goals = [ [ "survive 30 seconds", "survive 30 seconds" ], [ "survive 30 seconds", "survive 30 seconds" ], [ "outlast the timer", "outlast the timer" ] ]
+goals = [ [ "survive 30 seconds", "survive 30 seconds" ], [ "none", "none" ], [ "outlast the timer", "outlast the timer" ] ]
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
