@@ -12,10 +12,10 @@ func _process(delta):
 
 
 func use_difficulty(diff):
-	speed = diff / 6.25
+	speed = diff / 3
 	return self
 
 
-func start(p):
+func start(p,b):
 	player = p
 	return self

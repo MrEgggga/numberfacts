@@ -58,6 +58,9 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("hard"):
 		next_hard = not next_hard
+	
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
 
 
 func update_scores():

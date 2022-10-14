@@ -14,7 +14,7 @@ func use_difficulty(diff):
 	return self
 
 
-func start(p):
+func start(p, b):
 	player = p
 	$Lasers/Laser.speed = speed
 	for i in range(1, arms):

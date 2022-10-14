@@ -106,7 +106,7 @@ func setup_patterns():
 	var each_difficulty = difficulty / sqrt(num_patterns)
 	
 	for i in which_patterns:
-		var p = i.instance().use_difficulty(each_difficulty).start($Player)
+		var p = i.instance().use_difficulty(each_difficulty).start($Player, $".")
 		$Patterns.add_child(p)
 
 

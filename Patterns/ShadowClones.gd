@@ -16,7 +16,6 @@ export var delay = 0
 
 var running = false
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Label.visible = running
@@ -48,6 +47,6 @@ func use_difficulty(diff):
 	buffer_length = clone_spacing * num_clones + delay
 	return self
 
-func start(p):
+func start(p, b):
 	player = p
 	return self

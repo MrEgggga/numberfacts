@@ -12,7 +12,6 @@ func _ready():
 			continue
 		var line_split = i.split(": ")
 		if line_split.size() != 2:
-			print_debug(line_split)
 			facts.append("")
 			continue
 		facts.append(line_split[1])

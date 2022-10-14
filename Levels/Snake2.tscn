@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://LiberationSans-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Patterns/ShadowClones.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Snake.gd" type="Script" id=3]
+[ext_resource path="res://Patterns/DeathFloor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Maps/Level.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Other/Player.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 200
+font_data = ExtResource( 1 )
+
+[node name="Snake" type="Node2D"]
+script = ExtResource( 3 )
+hard_win = 30.0
+easy_win = 20.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Time" type="Label" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 1, 1, 1, 0.0392157 )
+custom_fonts/font = SubResource( 1 )
+text = "5.5"
+align = 1
+valign = 1
+
+[node name="TileMap" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 48, 464 )
+
+[node name="Clones" parent="." instance=ExtResource( 2 )]
+clone_spacing = 40
+num_clones = 1000
+delay = 20
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="DeathFloor" parent="." instance=ExtResource( 4 )]
+speed = 4.0
+
+[node name="ScoreTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Classic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Other/font.tres" type="DynamicFont" id=2]
@@ -6,12 +6,13 @@
 [ext_resource path="res://Levels/Snake.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Levels/Endless.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Other/Score.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
-modes = [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ) ]
-mode_inputs = [ "classic", "endless", "snake" ]
-goals = [ [ "survive 30 seconds", "survive 30 seconds" ], [ "none", "none" ], [ "outlast the timer", "outlast the timer" ] ]
+modes = [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 7 ) ]
+mode_inputs = [ "classic", "endless", "snake", "level" ]
+goals = [ [ "survive 30 seconds", "survive 30 seconds" ], [ "none", "none" ], [ "outlast the timer", "outlast the timer" ], [ "get to the goal", "get to the goal" ] ]
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
